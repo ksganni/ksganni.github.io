@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { padding: 50px; font-family: Arial, sans-serif; }
+        .btn { 
+            padding: 12px 24px; 
+            margin: 10px; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px;
+            font-size: 1rem;
+        }
+        .btn-primary { background: #3498db; color: white; }
+        .btn-secondary { background: transparent; color: #3498db; border: 2px solid #3498db; }
+    </style>
+</head>
+<body>
+    <h1>Button Functionality Test</h1>
+    
+    <h2>Home Page Buttons (onclick)</h2>
+    <button class="btn btn-primary" onclick="downloadResume()">
+        <i class="fas fa-download"></i> Resume
+    </button>
+    <button class="btn btn-secondary" onclick="openMail()">
+        <i class="fas fa-envelope"></i> krishnasathvika.ganni05@gmail.com
+    </button>
+    
+    <h2>Contact Page Buttons (ID-based)</h2>
+    <button class="btn btn-primary" id="contact-resume-btn">
+        <i class="fas fa-download"></i> Resume.pdf
+    </button>
+    <button class="btn btn-secondary" id="contact-mail-btn">
+        <i class="fas fa-envelope"></i> Mail ID
+    </button>
+
+    <script>
+        // Global functions for onclick handlers
+        function downloadResume() {
+            console.log('downloadResume function called');
+            alert('Resume download function called!');
+            
+            // Create a temporary link element for download
+            const link = document.createElement('a');
+            link.href = 'assets/documents/Krishna_Sathvika_Ganni_Resume.pdf';
+            link.download = 'Krishna_Sathvika_Ganni_Resume.pdf';
+            link.style.display = 'none';
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function openMail() {
+            console.log('openMail function called');
+            alert('Email function called!');
+            
+            const email = 'krishnasathvika.ganni05@gmail.com';
+            const subject = 'Hello Krishna!';
+            const body = 'Hi Krishna,\n\nI came across your portfolio and would like to connect.\n\nBest regards,';
+            
+            const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        }
+
+        // Event listeners for contact page buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactResumeBtn = document.getElementById('contact-resume-btn');
+            const contactMailBtn = document.getElementById('contact-mail-btn');
+            
+            if (contactResumeBtn) {
+                contactResumeBtn.addEventListener('click', function() {
+                    console.log('Contact resume button clicked');
+                    downloadResume();
+                });
+            }
+            
+            if (contactMailBtn) {
+                contactMailBtn.addEventListener('click', function() {
+                    console.log('Contact mail button clicked');
+                    openMail();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

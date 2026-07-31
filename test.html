@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Layout Test</title>
+    <style>
+        .projects-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .project-item {
+            background: white;
+            border: 2px solid #ccc;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            flex-direction: row;
+        }
+        
+        .project-item[data-project="2"] {
+            flex-direction: row-reverse !important;
+            border-color: red !important;
+        }
+        
+        .project-item[data-project="4"] {
+            flex-direction: row-reverse !important;
+            border-color: red !important;
+        }
+        
+        .project-image {
+            width: 200px;
+            height: 150px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+        }
+        
+        .project-info {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="projects-container">
+        <div class="project-item" data-project="1">
+            <div class="project-image">Image 1</div>
+            <div class="project-info">
+                <h3>Project Name 1</h3>
+                <p>This should be: Image LEFT, Text RIGHT</p>
+            </div>
+        </div>
+        
+        <div class="project-item" data-project="2">
+            <div class="project-image">Image 2</div>
+            <div class="project-info">
+                <h3>Project Name 2</h3>
+                <p>This should be: Image RIGHT, Text LEFT (RED BORDER)</p>
+            </div>
+        </div>
+        
+        <div class="project-item" data-project="3">
+            <div class="project-image">Image 3</div>
+            <div class="project-info">
+                <h3>Project Name 3</h3>
+                <p>This should be: Image LEFT, Text RIGHT</p>
+            </div>
+        </div>
+        
+        <div class="project-item" data-project="4">
+            <div class="project-image">Image 4</div>
+            <div class="project-info">
+                <h3>Project Name 4</h3>
+                <p>This should be: Image RIGHT, Text LEFT (RED BORDER)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

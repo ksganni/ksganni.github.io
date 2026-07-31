@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Sathvika Ganni - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Geometric Shapes Background -->
+    <div class="animated-shapes">
+        <div class="pentagon shape"></div>
+        <div class="pentagon shape"></div>
+        <div class="pentagon shape"></div>
+        <div class="circle shape"></div>
+        <div class="circle shape"></div>
+    </div>
+
+    <!-- Floating Particles Background -->
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Krishna Sathvika Ganni</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section">
+            <div class="section-container">
+                <div class="home-container">
+                    <div class="home-left">
+                        <div class="greeting">
+                            <h1>Hello, I'm Krishna Sathvika Ganni.</h1>
+                            <h2 class="role-line"><span id="typed-role"></span><span class="typing-cursor">|</span></h2>
+                        </div>
+                        <div class="summary-container">
+                            <p class="summary">I'm a passionate developer with expertise in full-stack development, machine learning, and data science. I love creating innovative solutions that make a real impact. Currently exploring the intersection of AI and web technologies to build the next generation of intelligent applications.</p>
+                        </div>
+                        <div class="tagline">
+                            <p class="tagline">Turning chaos into clarity ✨</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-secondary" onclick="downloadResume()">
+                                <i class="fas fa-download"></i> Resume
+                            </button>
+                            <button class="btn btn-secondary" onclick="openMail()">
+                                <i class="fas fa-envelope"></i> krishnasathvika.ganni05@gmail.com
+                            </button>
+                        </div>
+                    </div>
+                    <div class="home-right">
+                        <div class="profile-image">
+                            <img src="assets/images/profile.jpg" alt="Krishna Sathvika Ganni" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="section-container">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-box">
+                    <div class="skills-content">
+                        <ul class="skills-list">
+                            <li><strong>Programming Languages:</strong> Python, SQL, PL/SQL, R</li>
+                            <li><strong>Data Analysis &amp; Manipulation:</strong> Pandas, NumPy, Exploratory Data Analysis (EDA), Feature Engineering, RFM Analysis, Statistical Modeling</li>
+                            <li><strong>SQL &amp; Databases:</strong> PostgreSQL, SQLite, Google BigQuery, Oracle (PL/SQL), CTEs, Window Functions (LAG, FIRST_VALUE), FILTER Clauses, PERCENTILE_CONT, UNNEST (Nested/Semi-Structured Data), Query Optimization</li>
+                            <li><strong>Data Engineering &amp; Pipelines:</strong> ETL/ELT Pipeline Development, REST API Integration, Data Cleaning &amp; Validation, Data Pipeline Automation, Change Data Capture (CDC), Slowly Changing Dimensions (SCD Type 2), Record Hashing, Data Versioning &amp; Audit Trails, Apache Airflow (Workflow Orchestration, DAGs), Big Data Concepts</li>
+                            <li><strong>Machine Learning:</strong> Scikit-learn, Supervised Learning (Regression, Classification), Model Training &amp; Evaluation, K-Means Clustering, Ensemble Methods (Gradient Boosting, LightGBM), Probabilistic Modeling (BG/NBD, Gamma-Gamma)</li>
+                            <li><strong>Deep Learning &amp; Computer Vision:</strong> PyTorch, YOLOv8, OpenCV, Object Detection, Image Classification, Model Inference</li>
+                            <li><strong>Time Series &amp; Forecasting:</strong> ARIMA, Prophet, LightGBM, statsmodels, Trend Forecasting, Model Benchmarking (MAE, RMSE, MAPE)</li>
+                            <li><strong>Statistics &amp; Experimentation:</strong> A/B Testing, Hypothesis Testing (Z-test, Chi-Square, Welch T-test, Mann-Whitney U), Power &amp; Sample-Size Analysis, Bayesian Inference, Monte Carlo Simulation, Confidence/Credible Intervals</li>
+                            <li><strong>Generative AI &amp; LLM Engineering:</strong> LangChain, LangGraph, Retrieval-Augmented Generation (RAG), Prompt Engineering, Vector Databases (ChromaDB), Embeddings (FastEmbed), Google Gemini API, Agentic Workflow Orchestration</li>
+                            <li><strong>MLOps &amp; Model Lifecycle:</strong> MLflow (Experiment Tracking &amp; Model Registry), Model Versioning, Data Drift Detection (Evidently), Automated Retraining Pipelines, Model Monitoring, Model Deployment</li>
+                            <li><strong>Backend &amp; APIs:</strong> FastAPI, REST API Development, Streamlit</li>
+                            <li><strong>Data Visualization &amp; BI:</strong> Tableau, Power BI, DAX, Looker Studio, Plotly, Chart.js, Dashboard Development, KPI Design</li>
+                            <li><strong>Testing &amp; Code Quality:</strong> pytest, Unit Testing, Automated Data Validation, Test Coverage Enforcement, flake8 (Linting)</li>
+                            <li><strong>DevOps &amp; Infrastructure:</strong> Docker, Docker Compose, Git, GitHub Actions (CI/CD)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="section-container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-item" data-project="1">
+                        <div class="project-image">
+                            <img src="assets/images/web-analytics-funnel.png" alt="Web Analytics Funnel Analysis" />
+                        </div>
+                        <div class="project-header">
+                            <h3 class="project-name">Web Analytics Funnel Analysis</h3>
+                            <span class="expand-hint" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                        <div class="project-description" style="display: none;">
+                            <p class="project-tech-line"><strong>Tech:</strong> SQL, BigQuery, Python, Looker Studio, pytest, GitHub Actions</p>
+                            <ul class="project-points">
+                                <li>Analyzed 108,285 real e-commerce sessions from Google's public GA4 dataset using BigQuery, writing SQL with CTEs, window functions (LAG, FIRST_VALUE), and nested UNNEST operations to parse GA4's semi-structured event-parameter schema rather than working from a pre-flattened table.</li>
+                                <li>Modeled a 6-step session-based conversion funnel (session start → purchase), constructing session-level entities from raw event data and calculating both step-by-step and cumulative conversion rates; the analysis identified the largest drop-off between page view and item view (73.64% of sessions), with an overall conversion rate of 1.49%.</li>
+                                <li>Automated the query-to-export workflow with Python (google-cloud-bigquery, gspread), validated pipeline outputs with a pytest suite covering data structure and value ranges, and enforced code quality with flake8 linting, all run through GitHub Actions CI on every push.</li>
+                                <li>Visualized acquisition channels, funnel performance, session behavior, and revenue by channel in an interactive Looker Studio dashboard.</li>
+                            </ul>
+                            <div class="project-dashboard">
+                                <h4 class="dashboard-label">Dashboard</h4>
+                                <img src="assets/images/web-analytics-dashboard.png" alt="Looker Studio dashboard for Web Analytics Funnel Analysis" />
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ksganni/Web-Analytics-Funnel-Analysis" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-project="2">
+                        <div class="project-image">
+                            <img src="assets/images/clinical-trials-analyzer.png" alt="Clinical Trials Landscape Analyzer" />
+                        </div>
+                        <div class="project-header">
+                            <h3 class="project-name">Clinical Trials Landscape Analyzer</h3>
+                            <span class="expand-hint" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                        <div class="project-description" style="display: none;">
+                            <p class="project-tech-line"><strong>Tech:</strong> Python, PostgreSQL, SQL, Tableau, Docker, Apache Airflow, GitHub Actions, pytest</p>
+                            <ul class="project-points">
+                                <li>Built a full ingestion pipeline that pulls live study data from the ClinicalTrials.gov REST API v2, parses nested JSON responses, and loads 5,000+ trials into a normalized PostgreSQL schema (4 relational tables with foreign keys and indexes), using batched upserts so re-running the pipeline updates records instead of duplicating them.</li>
+                                <li>Implemented an incremental Change Data Capture (CDC) pipeline using SHA-256 record hashing and field-level diffing across 11 tracked attributes to detect inserted, updated, and missing trials between daily snapshots.</li>
+                                <li>Built SCD Type 2 historical versioning (trials_history with effective_from/effective_to/is_current) to preserve a full change history of trial status, enrollment, and phase, with dedicated historical SQL views (status transitions, enrollment deltas, multi-version trials, pipeline health).</li>
+                                <li>Orchestrated the daily incremental CDC + SCD2 pipeline with Apache Airflow (scheduled DAG, 0 6 * * * UTC), alongside the original full-refresh ETL path.</li>
+                                <li>Wrote 12 SQL analytics views using window functions, FILTER clauses, and PERCENTILE_CONT to analyze trial completion and termination rates by phase, sponsor mix (industry/academic/government), geographic distribution, and enrollment statistics.</li>
+                                <li>Connected the database directly to an interactive Tableau dashboard for exploring trial activity by disease area, phase, sponsor, and enrollment without writing SQL.</li>
+                                <li>Containerized the system with Docker Compose (Postgres, ETL, Adminer services) and set up a GitHub Actions CI pipeline running unit tests with coverage, a Docker build, and a live integration ETL against 50 studies on every push.</li>
+                                <li>Grew the test suite from 34 to 72 tests, covering hashing, CDC detection, SCD2 application, and snapshot/orchestration logic.</li>
+                            </ul>
+                            <div class="project-dashboard">
+                                <h4 class="dashboard-label">Dashboard</h4>
+                                <img src="assets/images/clinical-trials-dashboard.png" alt="Tableau dashboard for Clinical Trials Landscape Analyzer" />
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ksganni/Clinical-Trials-Analyzer" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-project="3">
+                        <div class="project-image">
+                            <img src="assets/images/sales-performance-dashboard.png" alt="End-to-End Sales Performance Dashboard" />
+                        </div>
+                        <div class="project-header">
+                            <h3 class="project-name">End-to-End Sales Performance Dashboard</h3>
+                            <span class="expand-hint" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                        <div class="project-description" style="display: none;">
+                            <p class="project-tech-line"><strong>Tech:</strong> Python, Pandas, SQL (SQLite), Power BI, DAX, pytest, GitHub Actions</p>
+                            <ul class="project-points">
+                                <li>Cleaned and transformed 9,994 raw transactional sales records through a 7-step Python/Pandas pipeline (standardizing columns, fixing data types, handling missing values, removing duplicates, and engineering new features like profit margin, discount buckets, and days-to-ship).</li>
+                                <li>Validated output quality with a 10-check pytest suite (null checks, valid ranges, duplicate detection, valid region/year values), integrated into a GitHub Actions CI pipeline that regenerates the dataset and reruns tests on every push.</li>
+                                <li>Wrote SQL queries analyzing regional performance, category and sub-category profitability, monthly/quarterly trends, and the relationship between discounting and profit - surfacing a clear insight that discounts above 40% consistently produced negative profit.</li>
+                                <li>Built an interactive Power BI dashboard with KPI cards, trend charts, and a discount-vs-profit scatter plot, using custom DAX measures (including a month-over-month revenue growth calculation with CALCULATE and DATEADD) for time-intelligence reporting.</li>
+                            </ul>
+                            <div class="project-dashboard">
+                                <h4 class="dashboard-label">Dashboard</h4>
+                                <img src="assets/images/sales-powerbi-dashboard.png" alt="Power BI dashboard for End-to-End Sales Performance Dashboard" />
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ksganni/Sales_dashboard" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-project="4">
+                        <div class="project-image">
+                            <img src="assets/images/mlops-lifecycle-platform.png" alt="MLOps Model Lifecycle Platform" />
+                        </div>
+                        <div class="project-header">
+                            <h3 class="project-name">MLOps Model Lifecycle Platform</h3>
+                            <span class="expand-hint" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                        <div class="project-description" style="display: none;">
+                            <p class="project-tech-line"><strong>Tech:</strong> Python, scikit-learn, MLflow, FastAPI, Evidently, PostgreSQL, Docker, pytest, GitHub Actions</p>
+                            <ul class="project-points">
+                                <li>Built a training pipeline (scikit-learn Random Forest with StandardScaler preprocessing) that logs parameters, accuracy, and weighted F1 score to MLflow, registers each trained model as a new version, and saves a local artifact for API serving.</li>
+                                <li>Implemented drift detection using Evidently's DataDriftPreset, comparing a reference dataset against incoming production-like data and computing a drift share against a configurable threshold, with full HTML/JSON report generation.</li>
+                                <li>Designed an automated retraining workflow that re-aligns training data with the latest customer cohort, retrains and re-registers the model when drift is detected, and re-checks drift afterward to confirm it falls back near zero.</li>
+                                <li>Exposed the full lifecycle through a FastAPI service with 10+ endpoints (prediction, drift checks, cohort simulation, retraining, dataset preview) and two HTML dashboards, containerized the stack (API, MLflow, PostgreSQL) with Docker Compose, and validated it with 31 automated tests enforcing 100% source coverage in GitHub Actions CI.</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/ksganni/mlops-model-lifecycle-platform" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                                <a href="https://youtu.be/v9UdGIWS66Y" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fab fa-youtube"></i> UI Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-project="5">
+                        <div class="project-image">
+                            <img src="assets/images/rag-knowledge-assistant.png" alt="Enterprise RAG Knowledge Assistant" />
+                        </div>
+                        <div class="project-header">
+                            <h3 class="project-name">Enterprise RAG Knowledge Assistant</h3>
+                            <span class="expand-hint" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                        <div class="project-description" style="display: none;">
+                            <p class="project-tech-line"><strong>Tech:</strong> Python, FastAPI, LangChain, ChromaDB, FastEmbed, Google Gemini, Streamlit, pytest, GitHub Actions</p>
+                            <ul class="project-points">
+                                <li>Built a document ingestion pipeline supporting PDF, TXT, and DOCX files, preserving page-number metadata and chunking text with LangChain's recursive character splitter (800 characters, 120-character overlap) for retrieval.</li>
+                                <li>Implemented a persistent vector search layer using local FastEmbed embeddings and ChromaDB, exposed through a FastAPI REST API with endpoints for document upload, deletion, listing, and question-answering.</li>
+                                <li>Designed a multi-model Gemini fallback chain with explicit handling for quota limits, model-not-found errors, and transient failures, degrading gracefully to a retrieval-only mode that returns ranked source passages instead of an error when the LLM is unavailable.</li>
+                                <li>Validated the system with a pytest suite covering document chunking correctness and full API integration (upload - ask - delete), integrated into a GitHub Actions CI pipeline that runs on every push without requiring a live Gemini API key, and delivered through an interactive Streamlit dashboard.</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/ksganni/Enterprise-RAG-Knowledge-Assistant" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                                <a href="https://youtu.be/VZ_NKIzeFlc" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fab fa-youtube"></i> UI Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-project="6">
+                        <div class="project-image">
+                            <img src="assets/images/ai-data-analyst-agent.png" alt="AI Data Analyst Agent" />
+                        </div>
+                        <div class="project-header">
+                            <h3 class="project-name">AI Data Analyst Agent</h3>
+                            <span class="expand-hint" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                        <div class="project-description" style="display: none;">
+                            <p class="project-tech-line"><strong>Tech:</strong> Python, LangGraph, Pandas, NumPy, Plotly, FastAPI, Streamlit, Google Gemini, pytest, Docker, GitHub Actions</p>
+                            <ul class="project-points">
+                                <li>Orchestrated a 4-node LangGraph workflow (load - analyze - visualize - explain) that ingests uploaded CSV/Excel files and classifies natural-language questions into one of four analysis types using deterministic keyword rules.</li>
+                                <li>Implemented core analysis functions in Pandas and NumPy - top-metric ranking by group, monthly trend aggregation, next-month forecasting via least-squares linear trend (np.polyfit), and descriptive statistics - with automatic column detection so the same functions generalize across different datasets.</li>
+                                <li>Integrated Google Gemini strictly for post-hoc explanatory synthesis of already-computed results, with automatic fallback to the deterministic local answer when the API is rate-limited or unavailable, keeping all numerical output reproducible and LLM-independent.</li>
+                                <li>Built a FastAPI backend and Streamlit frontend with Plotly visualizations, validated the system with a pytest suite (analysis functions, query classification, upload, and end-to-end query handling), and deployed it via Docker Compose and GitHub Actions CI to a live Render instance.</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/ksganni/AI-Data-Analyst-Agent" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                                <a href="https://ai-data-analyst-ui.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> Live Application
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-project="7">
+                        <div class="project-image">
+                            <img src="assets/images/cv-quality-inspection.png" alt="Computer Vision Quality Inspection System" />
+                        </div>
+                        <div class="project-header">
+                            <h3 class="project-name">Computer Vision Quality Inspection System</h3>
+                            <span class="expand-hint" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                        <div class="project-description" style="display: none;">
+                            <p class="project-tech-line"><strong>Tech:</strong> Python, YOLOv8, PyTorch, OpenCV, NumPy, FastAPI, Streamlit, pytest, Docker, GitHub Actions</p>
+                            <ul class="project-points">
+                                <li>Built a shared YOLOv8 inference layer (detector.py) that runs object detection on uploaded images, parsing class labels, bounding boxes, and per-detection confidence scores, and generating an annotated output image using OpenCV.</li>
+                                <li>Implemented a quality-grading function that converts average detection confidence into a categorical grade (Good &gt;=70%, Fair 45-70%, Poor &lt;45%, Needs Review for no detections), validated with a dedicated pytest suite covering all four grading outcomes.</li>
+                                <li>Deployed the Streamlit interface live on Streamlit Community Cloud for public demonstration, containerized the full application with Docker Compose (API + UI services), and set up a GitHub Actions CI pipeline that runs the pytest suite and generates a demonstration-mode evaluation report on every push; also included training/evaluation scripts (train.py, evaluate.py) to support replacing the pretrained COCO-class baseline with a custom-trained defect-detection model.</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/ksganni/Computer-Vision-Quality-Inspection" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                                <a href="https://computer-vision-quality-inspection.streamlit.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-project="8">
+                        <div class="project-image">
+                            <img src="assets/images/clv-prediction.png" alt="Customer Lifetime Value (CLV) Prediction" />
+                        </div>
+                        <div class="project-header">
+                            <h3 class="project-name">Customer Lifetime Value (CLV) Prediction</h3>
+                            <span class="expand-hint" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                        <div class="project-description" style="display: none;">
+                            <p class="project-tech-line"><strong>Tech:</strong> Python, Pandas, Lifetimes (BG/NBD, Gamma-Gamma), Scikit-learn, Chart.js, Docker, pytest, GitHub Actions</p>
+                            <ul class="project-points">
+                                <li>Built a data cleaning and RFM (Recency, Frequency, Monetary) feature pipeline from raw UCI Online Retail transaction records, handling returns/cancellations and computing per-customer purchase history summaries.</li>
+                                <li>Fit probabilistic BG/NBD and Gamma-Gamma models (via the Lifetimes library) to predict future purchase frequency and average spend, combining them into a 12-month CLV estimate per customer, with convergence-retry logic and outlier capping for model stability.</li>
+                                <li>Segmented customers into five value-based groups (Champions, Loyal, Potential, At-Risk, Lost) using rule-based RFM/CLV logic, with an optional Scikit-learn K-Means clustering alternative.</li>
+                                <li>Validated the pipeline with 36 automated tests, containerized it with Docker, and ran it through GitHub Actions CI (synthetic-data fallback + full pipeline execution on every push); exported results to CSV and an interactive Chart.js-based HTML dashboard, with CSVs also importable into Power BI or Tableau.</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/ksganni/CLV-Prediction" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=ixFJUB1APd0" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fab fa-youtube"></i> Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-project="9">
+                        <div class="project-image">
+                            <img src="assets/images/pjm-energy-forecasting.png" alt="PJM Hourly Energy Demand Forecasting" />
+                        </div>
+                        <div class="project-header">
+                            <h3 class="project-name">PJM Hourly Energy Demand Forecasting</h3>
+                            <span class="expand-hint" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                        <div class="project-description" style="display: none;">
+                            <p class="project-tech-line"><strong>Tech:</strong> Python, ARIMA (statsmodels), Prophet, LightGBM, Scikit-learn, FastAPI, Streamlit, Docker, pytest, GitHub Actions</p>
+                            <ul class="project-points">
+                                <li>Built a time-ordered data pipeline for PJM hourly electricity load (PJME_MW), holding out the final 168 hours as a leakage-free test window and engineering lag (24/48/168-hour) and rolling-mean features for the machine learning model.</li>
+                                <li>Trained and compared three forecasting approaches on identical training data - ARIMA (classical linear baseline), Prophet (additive trend/seasonality, with Holt-Winters fallback), and LightGBM (gradient boosting on lag/calendar features, with HistGradientBoosting fallback) - selecting the model with the lowest test MAE.</li>
+                                <li>Achieved a 2.33% MAPE with the gradient-boosting model on the held-out week, substantially outperforming ARIMA (5.83% MAPE) and Prophet (7.35% MAPE).</li>
+                                <li>Served results through a FastAPI REST API (/health, /metrics, /best-model, /forecast) and a live-deployed Streamlit dashboard, validated with pytest, containerized with Docker Compose, and run through GitHub Actions CI (tests + full pipeline smoke test with artifact verification on every push).</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/ksganni/PJM-Energy-Demand-Forecasting" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                                <a href="https://pjm-energy-demand-forecasting.streamlit.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> Live Dashboard
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-project="10">
+                        <div class="project-image">
+                            <img src="assets/images/ab-testing-cookie-cats.png" alt="A/B Testing and Experimentation Analysis Framework" />
+                        </div>
+                        <div class="project-header">
+                            <h3 class="project-name">A/B Testing and Experimentation Analysis Framework</h3>
+                            <span class="expand-hint" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                        <div class="project-description" style="display: none;">
+                            <p class="project-tech-line"><strong>Tech:</strong> Python, SciPy, statsmodels, NumPy, Pandas, Docker, pytest, GitHub Actions</p>
+                            <ul class="project-points">
+                                <li>Built a reusable A/B testing framework and applied it to the Cookie Cats gate-placement experiment (~90,000 players), computing retention lift between a control arm (gate at level 30) and treatment arm (gate at level 40).</li>
+                                <li>Implemented four frequentist hypothesis tests (two-proportion z-test, chi-square test of independence, Welch t-test, Mann-Whitney U) alongside a power/sample-size analysis (statsmodels NormalIndPower) for a 1-percentage-point minimum detectable effect at 80% power.</li>
+                                <li>Implemented a Bayesian Beta-Binomial comparison (Monte Carlo posterior sampling) to estimate P(treatment &gt; control) and a 95% credible interval for the lift, combining it with frequentist results through a dual-evidence decision rule that recommends deploying treatment, retaining control, or flags the result as inconclusive.</li>
+                                <li>On the primary 7-day retention endpoint, the framework recommended retaining control over deploying treatment; automated the full pipeline (data - stats - Markdown report and figures), validated with a pytest suite, containerized with Docker, and run through GitHub Actions CI on every push.</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/ksganni/A-B-testing-cookie-cats" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-project="11">
+                        <div class="project-image">
+                            <img src="assets/images/project3.jpg" alt="Project 11" />
+                        </div>
+                        <div class="project-header">
+                        <h3 class="project-name">Project Name 11</h3>
+                        <span class="expand-hint" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                    </div>
+                        <div class="project-description" style="display: none;">
+                            <p>About this project. Description will be updated soon.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-item" data-project="12">
+                        <div class="project-image">
+                            <img src="assets/images/project4.jpg" alt="Project 12" />
+                        </div>
+                        <div class="project-header">
+                        <h3 class="project-name">Project Name 12</h3>
+                        <span class="expand-hint" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                    </div>
+                        <div class="project-description" style="display: none;">
+                            <p>About this project. Description will be updated soon.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="section-container">
+                <h2 class="section-title">Experience</h2>
+                <div class="experience-box">
+                    <div class="experience-header">
+                        <h3 class="experience-title">ML/AI Research Assistant</h3>
+                        <span class="experience-date">Oct 2025 - Present</span>
+                    </div>
+                    <div class="experience-company">New Jersey Institute of Technology (NJIT) | Newark, NJ</div>
+
+                    <div class="experience-block">
+                        <h4 class="experience-subtitle">Overview</h4>
+                        <p>Working as a research assistant on applied AI/ML projects spanning power grid resilience and healthcare, contributing across the research lifecycle - from dataset preparation and modeling to literature review, explainability, and publication.</p>
+                    </div>
+
+                    <div class="experience-block">
+                        <h4 class="experience-subtitle">Contributions</h4>
+                        <ul class="experience-points">
+                            <li>Improved AI-based storm damage risk prediction models for power grid resilience using TensorFlow and PyTorch, achieving a 15% increase in model accuracy through dataset preparation, optimization, and image augmentation techniques applied to automatic inspection of electrical infrastructure.</li>
+                            <li>Supported Smart Health AI research initiatives across breast cancer, Parkinson's, Alzheimer's, glioma, and healthcare cost prediction, conducting literature reviews, preparing datasets, and exploring explainable AI (XAI) approaches to improve model interpretability.</li>
+                            <li>Co-authored a peer-reviewed IEEE Xplore publication on machine learning for storm-related energy transmission safeguarding, with the associated research poster recognized with 3rd Place - Best Poster at the 2025 NJIT Future Energy Transmission Conference.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-block experience-publication">
+                        <h4 class="experience-subtitle">Publication</h4>
+                        <p class="publication-citation">Z. Yu, K.S. Ganni, J.A. Mehta, P. Pong, J. Li, and C. Liu, "Machine Learning and AI for Optimizing and Safeguarding Energy Transmission in Storms by Automatic Inspection of Electrical Wires," IEEE Xplore, 2025.</p>
+                        <a href="https://ieeexplore.ieee.org/document/11380552" target="_blank" rel="noopener noreferrer" class="publication-link">
+                            <i class="fas fa-external-link-alt"></i> View on IEEE Xplore
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <div class="diagonal-divider divider-5"></div>
+        <section id="contact" class="section">
+            <div class="section-container">
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-icons-container">
+                    <div class="expandable-icon" data-url="krishnasathvika.ganni05@gmail.com">
+                        <a href="mailto:krishnasathvika.ganni05@gmail.com" class="icon-link">
+                            <i class="fas fa-envelope"></i>
+                            <span class="url-text">krishnasathvika.ganni05@gmail.com</span>
+                        </a>
+                    </div>
+                    <div class="expandable-icon" data-url="www.linkedin.com/in/krishna-sathvika-ganni">
+                        <a href="https://www.linkedin.com/in/krishna-sathvika-ganni" target="_blank" class="icon-link">
+                            <i class="fab fa-linkedin"></i>
+                            <span class="url-text">www.linkedin.com/in/krishna-sathvika-ganni</span>
+                        </a>
+                    </div>
+                    <div class="expandable-icon" data-url="https://github.com/ksganni">
+                        <a href="https://github.com/ksganni" target="_blank" class="icon-link">
+                            <i class="fab fa-github"></i>
+                            <span class="url-text">https://github.com/ksganni</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js?v=4"></script>
+</body>
+</html>
