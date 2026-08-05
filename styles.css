@@ -618,15 +618,25 @@ p, .text, li, strong {
 }
 
 .btn-secondary {
-    background: transparent;
-    color: #3498db;
-    border: 2px solid #3498db;
+    background: rgba(255, 255, 255, 0.08);
+    color: #d9f0ff !important;
+    border: 2px solid #9fd4ff;
+    text-shadow: none !important;
+}
+
+.btn-secondary i {
+    color: #d9f0ff !important;
 }
 
 .btn-secondary:hover {
-    background: #3498db;
-    color: white;
+    background: rgba(159, 212, 255, 0.25);
+    color: #ffffff !important;
+    border-color: #c8e9ff;
     transform: translateY(-2px);
+}
+
+.btn-secondary:hover i {
+    color: #ffffff !important;
 }
 
 .profile-image {
@@ -1323,23 +1333,24 @@ body.project-focused {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background: #f0f0f0;
-    border: 2px solid #ddd;
+    background: rgba(15, 23, 42, 0.85);
+    border: 2px solid #9fd4ff;
     border-radius: 25px;
     text-decoration: none;
-    color: #666;
+    color: #d9f0ff;
     font-size: 1.5rem;
     transition: all 0.3s ease;
     z-index: 3;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
 .icon-link:hover {
-    background: linear-gradient(135deg, #3498db, #2980b9);
-    color: white;
-    border-color: #3498db;
-    box-shadow: 0 4px 20px rgba(52, 152, 219, 0.4);
+    background: rgba(8, 18, 40, 0.95);
+    color: #ffffff;
+    border-color: #c8e9ff;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35), 0 0 18px rgba(159, 212, 255, 0.25);
 }
 
 .icon-link i {
@@ -1347,6 +1358,11 @@ body.project-focused {
     z-index: 5;
     margin-right: 0;
     transition: all 0.3s ease;
+    color: #d9f0ff;
+}
+
+.icon-link:hover i {
+    color: #ffffff;
 }
 
 .url-text {
@@ -1354,16 +1370,17 @@ body.project-focused {
     top: 50%;
     transform: translateY(-50%);
     background: transparent;
-    color: white;
+    color: #ffffff !important;
     padding: 0 0.75rem;
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 0.95rem;
+    font-weight: 600;
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
     z-index: 4;
     pointer-events: none;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
 }
 
 .expandable-icon:nth-child(1) .url-text {
