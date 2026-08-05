@@ -48,14 +48,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function updateGlaze() {
             const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
-            const progress = window.scrollY / maxScroll;
-            const swirl = progress * 220;
-            const driftX = (progress - 0.5) * 12;
-            const driftY = progress * 10;
+            const progress = Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
+            const swirl = progress * 260;
+            const driftX = (progress - 0.5) * 18;
+            const driftY = progress * 14;
 
-            glaze.style.setProperty('--swirl', `${swirl}deg`);
-            glaze.style.setProperty('--drift-x', `${driftX}%`);
-            glaze.style.setProperty('--drift-y', `${driftY}%`);
+            glaze.style.transform = `translate3d(${driftX}%, ${driftY}%, 0) rotate(${swirl}deg)`;
             ticking = false;
         }
 
@@ -68,6 +66,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
         updateGlaze();
     }
+
+    // Glass shine follows cursor near buttons / contact pills
+    function bindShine(el) {
+        el.addEventListener('pointermove', (e) => {
+            const rect = el.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            el.style.setProperty('--shine-x', `${x}%`);
+            el.style.setProperty('--shine-y', `${y}%`);
+            el.classList.add('shine-near');
+        });
+        el.addEventListener('pointerleave', () => {
+            el.classList.remove('shine-near');
+        });
+    }
+
+    document.querySelectorAll('.btn-secondary, .icon-link').forEach(bindShine);
 });
 
 // Navigation functionality
