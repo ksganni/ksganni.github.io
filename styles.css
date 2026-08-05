@@ -618,20 +618,21 @@ p, .text, li, strong {
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.08);
-    color: #d9f0ff !important;
-    border: 2px solid #9fd4ff;
+    background: #0b1a36 !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+    font-weight: 600 !important;
     text-shadow: none !important;
 }
 
 .btn-secondary i {
-    color: #d9f0ff !important;
+    color: #ffffff !important;
 }
 
 .btn-secondary:hover {
-    background: rgba(159, 212, 255, 0.25);
+    background: #14305c !important;
     color: #ffffff !important;
-    border-color: #c8e9ff;
+    border-color: #b8e6ff !important;
     transform: translateY(-2px);
 }
 
@@ -1630,4 +1631,17 @@ body.project-focused {
     .contact-container {
         grid-template-columns: 1fr;
     }
+}
+
+/* Force visible home CTA buttons */
+#home .action-buttons .btn.btn-secondary,
+#home .action-buttons .btn.btn-secondary i {
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+#home .action-buttons .btn.btn-secondary {
+    background: #0b1a36 !important;
+    border: 2px solid #ffffff !important;
+    font-weight: 600 !important;
 }
