@@ -111,12 +111,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 sectionRevealObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.18, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -10% 0px' });
 
     document.querySelectorAll('.reveal-on-scroll').forEach(el => {
         sectionRevealObserver.observe(el);
     });
-    
+
+    // Also reveal anything already in view on load
+    requestAnimationFrame(() => {
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
+                el.classList.add('revealed');
+            }
+        });
+    });
     // Add a back arrow button to every card (visible only when expanded)
     projectItems.forEach(item => {
         const backBtn = document.createElement('button');
