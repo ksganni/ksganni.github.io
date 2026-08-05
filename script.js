@@ -66,23 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         updateGlaze();
     }
-
-    // Glass shine follows cursor near buttons / contact pills
-    function bindShine(el) {
-        el.addEventListener('pointermove', (e) => {
-            const rect = el.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-            el.style.setProperty('--shine-x', `${x}%`);
-            el.style.setProperty('--shine-y', `${y}%`);
-            el.classList.add('shine-near');
-        });
-        el.addEventListener('pointerleave', () => {
-            el.classList.remove('shine-near');
-        });
-    }
-
-    document.querySelectorAll('.btn-secondary, .icon-link').forEach(bindShine);
 });
 
 // Navigation functionality
