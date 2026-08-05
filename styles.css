@@ -6,7 +6,7 @@
 }
 
 html {
-    background-color: #0a1428;
+    background-color: #070f1c;
     overscroll-behavior: none;
 }
 
@@ -19,14 +19,14 @@ body {
     position: relative;
     overflow-x: hidden;
     min-height: 100vh;
-    background-color: #0a1428;
+    background-color: #070f1c;
     background-image: linear-gradient(
         135deg,
-        #0a1428 0%,
-        #1e3a8a 25%,
-        #3b82f6 50%,
-        #1e3a8a 75%,
-        #0a1428 100%
+        #070f1c 0%,
+        #122554 25%,
+        #1e3a8a 50%,
+        #122554 75%,
+        #070f1c 100%
     );
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -116,22 +116,22 @@ body::after {
     inset: -15%;
     border-radius: 42%;
     filter: blur(55px);
-    opacity: 0.7;
+    opacity: 0.42;
     mix-blend-mode: screen;
 }
 
 .glaze-1 {
     background:
-        radial-gradient(ellipse 50% 40% at 30% 35%, rgba(125, 211, 252, 0.7) 0%, transparent 55%),
-        radial-gradient(ellipse 45% 50% at 70% 60%, rgba(96, 165, 250, 0.55) 0%, transparent 60%);
+        radial-gradient(ellipse 50% 40% at 30% 35%, rgba(125, 211, 252, 0.45) 0%, transparent 55%),
+        radial-gradient(ellipse 45% 50% at 70% 60%, rgba(96, 165, 250, 0.35) 0%, transparent 60%);
     animation: glazeFloatA 22s ease-in-out infinite;
 }
 
 .glaze-2 {
     background:
-        radial-gradient(ellipse 55% 45% at 65% 25%, rgba(224, 242, 254, 0.45) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 55% at 25% 75%, rgba(59, 130, 246, 0.55) 0%, transparent 60%);
-    opacity: 0.55;
+        radial-gradient(ellipse 55% 45% at 65% 25%, rgba(186, 230, 253, 0.28) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 55% at 25% 75%, rgba(59, 130, 246, 0.35) 0%, transparent 60%);
+    opacity: 0.35;
     animation: glazeFloatB 30s ease-in-out infinite;
 }
 
@@ -139,14 +139,14 @@ body::after {
     background:
         conic-gradient(
             from 120deg at 50% 50%,
-            rgba(147, 197, 253, 0.28) 0deg,
-            rgba(255, 255, 255, 0.18) 90deg,
-            rgba(56, 189, 248, 0.28) 180deg,
-            rgba(59, 130, 246, 0.22) 270deg,
-            rgba(147, 197, 253, 0.28) 360deg
+            rgba(147, 197, 253, 0.16) 0deg,
+            rgba(255, 255, 255, 0.08) 90deg,
+            rgba(56, 189, 248, 0.16) 180deg,
+            rgba(59, 130, 246, 0.12) 270deg,
+            rgba(147, 197, 253, 0.16) 360deg
         );
     filter: blur(75px);
-    opacity: 0.5;
+    opacity: 0.32;
     mix-blend-mode: soft-light;
     animation: glazeFloatC 40s linear infinite;
 }
@@ -693,26 +693,27 @@ p, .text, li, strong {
 }
 
 .btn-secondary {
-    background: #0b1a36 !important;
-    color: #ffffff !important;
-    border: 2px solid #ffffff !important;
+    background: rgba(11, 26, 54, 0.55) !important;
+    color: #d7e9f8 !important;
+    border: 1.5px solid rgba(186, 214, 236, 0.55) !important;
     font-weight: 600 !important;
     text-shadow: none !important;
+    border-radius: 10px;
 }
 
 .btn-secondary i {
-    color: #ffffff !important;
+    color: #d7e9f8 !important;
 }
 
 .btn-secondary:hover {
-    background: #14305c !important;
-    color: #ffffff !important;
-    border-color: #b8e6ff !important;
+    background: rgba(20, 48, 92, 0.7) !important;
+    color: #eef7ff !important;
+    border-color: rgba(186, 214, 236, 0.75) !important;
     transform: translateY(-2px);
 }
 
 .btn-secondary:hover i {
-    color: #ffffff !important;
+    color: #eef7ff !important;
 }
 
 .profile-image {
@@ -1409,24 +1410,24 @@ body.project-focused {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background: rgba(15, 23, 42, 0.85);
-    border: 2px solid #9fd4ff;
+    background: rgba(15, 23, 42, 0.55);
+    border: 1.5px solid rgba(186, 214, 236, 0.5);
     border-radius: 25px;
     text-decoration: none;
-    color: #d9f0ff;
+    color: #d7e9f8;
     font-size: 1.5rem;
     transition: all 0.3s ease;
     z-index: 3;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 
 .icon-link:hover {
-    background: rgba(8, 18, 40, 0.95);
-    color: #ffffff;
-    border-color: #c8e9ff;
-    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35), 0 0 18px rgba(159, 212, 255, 0.25);
+    background: rgba(15, 23, 42, 0.72);
+    color: #eef7ff;
+    border-color: rgba(186, 214, 236, 0.7);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.25), 0 0 12px rgba(147, 197, 253, 0.15);
 }
 
 .icon-link i {
@@ -1434,11 +1435,11 @@ body.project-focused {
     z-index: 5;
     margin-right: 0;
     transition: all 0.3s ease;
-    color: #d9f0ff;
+    color: #d7e9f8;
 }
 
 .icon-link:hover i {
-    color: #ffffff;
+    color: #eef7ff;
 }
 
 .url-text {
@@ -1446,7 +1447,7 @@ body.project-focused {
     top: 50%;
     transform: translateY(-50%);
     background: transparent;
-    color: #ffffff !important;
+    color: #e2eef8 !important;
     padding: 0 0.75rem;
     font-size: 0.95rem;
     font-weight: 600;
@@ -1456,7 +1457,7 @@ body.project-focused {
     transition: all 0.3s ease;
     z-index: 4;
     pointer-events: none;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35) !important;
 }
 
 .expandable-icon:nth-child(1) .url-text {
@@ -1711,12 +1712,12 @@ body.project-focused {
 /* Force visible home CTA buttons */
 #home .action-buttons .btn.btn-secondary,
 #home .action-buttons .btn.btn-secondary i {
-    color: #ffffff !important;
+    color: #d7e9f8 !important;
     text-shadow: none !important;
 }
 
 #home .action-buttons .btn.btn-secondary {
-    background: #0b1a36 !important;
-    border: 2px solid #ffffff !important;
+    background: rgba(11, 26, 54, 0.55) !important;
+    border: 1.5px solid rgba(186, 214, 236, 0.55) !important;
     font-weight: 600 !important;
 }
