@@ -103,28 +103,33 @@ document.addEventListener('DOMContentLoaded', function() {
     
     projectItems.forEach(item => revealObserver.observe(item));
 
-    // Section scroll reveal: header + content appear when section is reached
+    // Section scroll reveal: header first, then content
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
+            if (!entry.isIntersecting) return;
 
-                // When Projects section appears, reveal all project cards too
-                if (entry.target.id === 'projects') {
+            const section = entry.target;
+            section.classList.add('is-visible');
+
+            // Content appears only after the header has started showing
+            setTimeout(() => {
+                section.classList.add('content-visible');
+
+                if (section.id === 'projects') {
                     projectItems.forEach((card, index) => {
                         setTimeout(() => {
                             card.classList.add('visible');
                             setTimeout(() => card.classList.add('floating'), 650);
-                        }, (index % 4) * 100 + 200);
+                        }, (index % 4) * 100);
                     });
                 }
+            }, 450);
 
-                sectionObserver.unobserve(entry.target);
-            }
+            sectionObserver.unobserve(section);
         });
     }, {
-        threshold: 0.12,
-        rootMargin: '0px 0px -8% 0px'
+        threshold: 0.15,
+        rootMargin: '0px 0px -10% 0px'
     });
 
     document.querySelectorAll('.reveal-section').forEach(section => {
