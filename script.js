@@ -40,6 +40,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
         typeRole();
     }
+
+    // Glaze swirl follows scroll
+    const glaze = document.querySelector('.glaze-swirl');
+    if (glaze) {
+        let ticking = false;
+
+        function updateGlaze() {
+            const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+            const progress = window.scrollY / maxScroll;
+            const swirl = progress * 220;
+            const driftX = (progress - 0.5) * 12;
+            const driftY = progress * 10;
+
+            glaze.style.setProperty('--swirl', `${swirl}deg`);
+            glaze.style.setProperty('--drift-x', `${driftX}%`);
+            glaze.style.setProperty('--drift-y', `${driftY}%`);
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(updateGlaze);
+                ticking = true;
+            }
+        }, { passive: true });
+
+        updateGlaze();
+    }
 });
 
 // Navigation functionality
