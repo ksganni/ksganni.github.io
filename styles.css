@@ -6,7 +6,7 @@
 }
 
 html {
-    background-color: #070f1c;
+    background-color: #0a1428;
     overscroll-behavior: none;
 }
 
@@ -19,14 +19,14 @@ body {
     position: relative;
     overflow-x: hidden;
     min-height: 100vh;
-    background-color: #070f1c;
+    background-color: #0a1428;
     background-image: linear-gradient(
         135deg,
-        #070f1c 0%,
-        #122554 25%,
-        #1e3a8a 50%,
-        #122554 75%,
-        #070f1c 100%
+        #0a1428 0%,
+        #1e3a8a 25%,
+        #3b82f6 50%,
+        #1e3a8a 75%,
+        #0a1428 100%
     );
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -116,22 +116,22 @@ body::after {
     inset: -15%;
     border-radius: 42%;
     filter: blur(55px);
-    opacity: 0.42;
+    opacity: 0.7;
     mix-blend-mode: screen;
 }
 
 .glaze-1 {
     background:
-        radial-gradient(ellipse 50% 40% at 30% 35%, rgba(125, 211, 252, 0.45) 0%, transparent 55%),
-        radial-gradient(ellipse 45% 50% at 70% 60%, rgba(96, 165, 250, 0.35) 0%, transparent 60%);
+        radial-gradient(ellipse 50% 40% at 30% 35%, rgba(125, 211, 252, 0.7) 0%, transparent 55%),
+        radial-gradient(ellipse 45% 50% at 70% 60%, rgba(96, 165, 250, 0.55) 0%, transparent 60%);
     animation: glazeFloatA 22s ease-in-out infinite;
 }
 
 .glaze-2 {
     background:
-        radial-gradient(ellipse 55% 45% at 65% 25%, rgba(186, 230, 253, 0.28) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 55% at 25% 75%, rgba(59, 130, 246, 0.35) 0%, transparent 60%);
-    opacity: 0.35;
+        radial-gradient(ellipse 55% 45% at 65% 25%, rgba(224, 242, 254, 0.45) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 55% at 25% 75%, rgba(59, 130, 246, 0.55) 0%, transparent 60%);
+    opacity: 0.55;
     animation: glazeFloatB 30s ease-in-out infinite;
 }
 
@@ -139,14 +139,14 @@ body::after {
     background:
         conic-gradient(
             from 120deg at 50% 50%,
-            rgba(147, 197, 253, 0.16) 0deg,
-            rgba(255, 255, 255, 0.08) 90deg,
-            rgba(56, 189, 248, 0.16) 180deg,
-            rgba(59, 130, 246, 0.12) 270deg,
-            rgba(147, 197, 253, 0.16) 360deg
+            rgba(147, 197, 253, 0.28) 0deg,
+            rgba(255, 255, 255, 0.18) 90deg,
+            rgba(56, 189, 248, 0.28) 180deg,
+            rgba(59, 130, 246, 0.22) 270deg,
+            rgba(147, 197, 253, 0.28) 360deg
         );
     filter: blur(75px);
-    opacity: 0.32;
+    opacity: 0.5;
     mix-blend-mode: soft-light;
     animation: glazeFloatC 40s linear infinite;
 }
@@ -183,20 +183,20 @@ body::after {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: -1;
+    z-index: 1;
     overflow: hidden;
 }
 
 .shape {
     position: absolute;
-    opacity: 0.6;
+    opacity: 0.65;
 }
 
 /* Moving Pentagon Shapes with Glow */
 .pentagon {
     width: 18px;
     height: 18px;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.85);
     clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
     box-shadow: 
         0 0 8px rgba(255, 255, 255, 0.6),
@@ -220,14 +220,12 @@ body::after {
     animation-delay: 10s;
 }
 
-/* Lines removed as requested */
-
 /* Moving Circles with Glow */
 .circle {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.85);
     box-shadow: 
         0 0 6px rgba(255, 255, 255, 0.6),
         0 0 12px rgba(255, 255, 255, 0.4),
@@ -245,6 +243,77 @@ body::after {
     animation-delay: 8s;
 }
 
+/* Small triangles */
+.triangle {
+    width: 0;
+    height: 0;
+    background: transparent;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 12px solid rgba(255, 255, 255, 0.8);
+    filter: drop-shadow(0 0 6px rgba(133, 193, 233, 0.7));
+}
+
+.triangle:nth-child(6) {
+    animation: moveFromLeft 40s linear infinite;
+    animation-delay: 4s;
+}
+
+/* Small squares */
+.square {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(133, 193, 233, 0.5);
+}
+
+.square:nth-child(7) {
+    animation: moveFromTop 33s linear infinite;
+    animation-delay: 6s;
+}
+
+/* Small diamonds */
+.diamond {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    transform: rotate(45deg);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.diamond:nth-child(8) {
+    animation: floatDiagonal 31s linear infinite;
+    animation-delay: 2s;
+}
+
+/* Floating connected lines */
+.conn-line {
+    height: 1.5px;
+    width: 100px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+    box-shadow: 0 0 8px rgba(133, 193, 233, 0.45);
+    border-radius: 2px;
+}
+
+.conn-line:nth-child(9) {
+    width: 140px;
+    animation: moveFromLeft 42s linear infinite;
+    animation-delay: 1s;
+}
+
+.conn-line:nth-child(10) {
+    width: 110px;
+    animation: moveFromRight 39s linear infinite;
+    animation-delay: 7s;
+}
+
+.conn-line:nth-child(11) {
+    width: 130px;
+    animation: moveFromTop 44s linear infinite;
+    animation-delay: 3s;
+}
+
 /* Floating particles for extra detail */
 .floating-particles {
     position: fixed;
@@ -253,12 +322,12 @@ body::after {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: -1;
+    z-index: 1;
 }
 
 .particle {
     position: absolute;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.85);
     border-radius: 50%;
     width: 2px;
     height: 2px;
@@ -267,30 +336,19 @@ body::after {
         0 0 6px rgba(255, 255, 255, 0.4);
 }
 
-/* Small floating particles */
-.particle:nth-child(1) {
-    animation: moveFromLeft 28s linear infinite;
-    animation-delay: 2s;
-}
+.particle:nth-child(1) { animation: moveFromLeft 28s linear infinite; animation-delay: 2s; }
+.particle:nth-child(2) { animation: moveFromRight 31s linear infinite; animation-delay: 7s; }
+.particle:nth-child(3) { animation: moveFromTop 26s linear infinite; animation-delay: 12s; }
+.particle:nth-child(4) { animation: moveFromBottom 33s linear infinite; animation-delay: 4s; }
+.particle:nth-child(5) { animation: floatDiagonal 29s linear infinite; animation-delay: 15s; }
+.particle:nth-child(6) { animation: moveFromLeft 34s linear infinite; animation-delay: 1s; width: 3px; height: 3px; }
+.particle:nth-child(7) { animation: moveFromRight 27s linear infinite; animation-delay: 9s; }
+.particle:nth-child(8) { animation: moveFromTop 36s linear infinite; animation-delay: 5s; width: 3px; height: 3px; }
 
-.particle:nth-child(2) {
-    animation: moveFromRight 31s linear infinite;
-    animation-delay: 7s;
-}
-
-.particle:nth-child(3) {
-    animation: moveFromTop 26s linear infinite;
-    animation-delay: 12s;
-}
-
-.particle:nth-child(4) {
-    animation: moveFromBottom 33s linear infinite;
-    animation-delay: 4s;
-}
-
-.particle:nth-child(5) {
-    animation: floatDiagonal 29s linear infinite;
-    animation-delay: 15s;
+/* Keep shapes visible while a project detail is open */
+body.project-focused .animated-shapes,
+body.project-focused .floating-particles {
+    z-index: 850;
 }
 
 @keyframes backgroundFloat {
@@ -489,6 +547,8 @@ p, .text, li, strong {
 /* Main Content */
 .main-content {
     margin-top: 80px;
+    position: relative;
+    z-index: 2;
 }
 
 .section {
