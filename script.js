@@ -102,6 +102,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { threshold: 0.15 });
     
     projectItems.forEach(item => revealObserver.observe(item));
+
+    // Scroll reveal for section titles and content blocks
+    const sectionRevealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                sectionRevealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.18, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+        sectionRevealObserver.observe(el);
+    });
     
     // Add a back arrow button to every card (visible only when expanded)
     projectItems.forEach(item => {
