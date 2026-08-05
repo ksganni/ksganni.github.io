@@ -103,28 +103,32 @@ document.addEventListener('DOMContentLoaded', function() {
     
     projectItems.forEach(item => revealObserver.observe(item));
 
-    // Scroll reveal for section titles and content blocks
-    const sectionRevealObserver = new IntersectionObserver((entries) => {
+    // Section scroll reveal: header + content appear when section is reached
+    const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                sectionRevealObserver.unobserve(entry.target);
+                entry.target.classList.add('is-visible');
+
+                // When Projects section appears, reveal all project cards too
+                if (entry.target.id === 'projects') {
+                    projectItems.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                            setTimeout(() => card.classList.add('floating'), 650);
+                        }, (index % 4) * 100 + 200);
+                    });
+                }
+
+                sectionObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.08, rootMargin: '0px 0px -10% 0px' });
-
-    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-        sectionRevealObserver.observe(el);
+    }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -8% 0px'
     });
 
-    // Also reveal anything already in view on load
-    requestAnimationFrame(() => {
-        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
-                el.classList.add('revealed');
-            }
-        });
+    document.querySelectorAll('.reveal-section').forEach(section => {
+        sectionObserver.observe(section);
     });
     // Add a back arrow button to every card (visible only when expanded)
     projectItems.forEach(item => {
