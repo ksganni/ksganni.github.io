@@ -6,7 +6,7 @@
 }
 
 html {
-    background-color: #0a1428;
+    background-color: #06101f;
     overscroll-behavior: none;
 }
 
@@ -19,18 +19,61 @@ body {
     position: relative;
     overflow-x: hidden;
     min-height: 100vh;
-    background-color: #0a1428;
-    background-image: linear-gradient(
-        135deg,
-        #0a1428 0%,
-        #1e3a8a 25%,
-        #3b82f6 50%,
-        #1e3a8a 75%,
-        #0a1428 100%
-    );
-    background-attachment: fixed;
+    background-color: #06101f;
+}
+
+/* Same blue theme — dark on home, eases to current bright blue while scrolling */
+.site-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-color: #06101f;
+    --scroll-light: 0;
+}
+
+.site-backdrop::before,
+.site-backdrop::after {
+    content: '';
+    position: absolute;
+    inset: 0;
     background-repeat: no-repeat;
     background-size: cover;
+    transition: opacity 0.15s linear;
+}
+
+/* Darker blue (home / top of page) */
+.site-backdrop::before {
+    opacity: calc(1 - var(--scroll-light));
+    background-image:
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+        linear-gradient(
+            135deg,
+            #06101f 0%,
+            #0f2748 25%,
+            #1a4a8c 50%,
+            #0f2748 75%,
+            #06101f 100%
+        );
+}
+
+/* Current brighter blue (further down the page) */
+.site-backdrop::after {
+    opacity: var(--scroll-light);
+    background-image:
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.06) 0%, transparent 50%),
+        linear-gradient(
+            135deg,
+            #0a1428 0%,
+            #1e3a8a 25%,
+            #3b82f6 50%,
+            #1e3a8a 75%,
+            #0a1428 100%
+        );
 }
 
 /* Soft on-screen drift for circles and dots */
@@ -90,34 +133,13 @@ body {
     100% { width: 0; opacity: 0.8; }
 }
 
-/* Pure Dark Blue Gradient Background - handled on body above */
+/* Pure Dark Blue Gradient Background - handled by .site-backdrop */
 body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.06) 0%, transparent 50%);
-    z-index: -2;
-    pointer-events: none;
+    display: none;
 }
 
 body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%),
-        linear-gradient(-45deg, transparent 30%, rgba(255, 255, 255, 0.03) 50%, transparent 70%);
-    z-index: -1;
-    pointer-events: none;
+    display: none;
 }
 
 /* Circles only */
@@ -348,19 +370,19 @@ p, .text, li, strong {
     text-shadow: 0 0 8px rgba(133, 193, 233, 0.6);
 }
 
-/* Navigation Bar - frosted glass (transparent bar on every section) */
+/* Navigation Bar - frosted glass bar (see-through on every section) */
 .navbar {
     position: fixed !important;
     top: 0 !important;
     width: 100% !important;
-    background: rgba(10, 20, 40, 0.35) !important;
-    backdrop-filter: blur(14px) saturate(1.2) !important;
-    -webkit-backdrop-filter: blur(14px) saturate(1.2) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(18px) saturate(1.35) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(1.35) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22) !important;
     z-index: 1000 !important;
     padding: 1rem 0 !important;
     transition: background 0.3s ease !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18) !important;
 }
 
 .nav-container {

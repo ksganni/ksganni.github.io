@@ -47,6 +47,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
     const navLogo = document.querySelector('.nav-logo');
     const sections = document.querySelectorAll('.section');
+    const siteBackdrop = document.querySelector('.site-backdrop');
+
+    // Home starts darker blue; eases to the current brighter blue while scrolling
+    function updateScrollTheme() {
+        if (!siteBackdrop) return;
+        const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+        // Reach full brightness around mid-page so Skills/Projects already feel lit
+        const progress = Math.min(Math.max(window.scrollY / (maxScroll * 0.55), 0), 1);
+        siteBackdrop.style.setProperty('--scroll-light', progress.toFixed(3));
+    }
+
+    updateScrollTheme();
+    window.addEventListener('scroll', updateScrollTheme, { passive: true });
+    window.addEventListener('resize', updateScrollTheme);
     
     // Update active nav link based on scroll position
     function updateActiveNavLink() {
