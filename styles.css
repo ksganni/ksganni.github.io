@@ -615,15 +615,27 @@ p, .text, li, strong {
 }
 
 .btn-secondary {
-    background: transparent;
-    color: #3498db;
-    border: 2px solid #3498db;
+    background: rgba(11, 26, 54, 0.55) !important;
+    color: #d7e9f8 !important;
+    border: 1.5px solid rgba(186, 214, 236, 0.55) !important;
+    font-weight: 600 !important;
+    text-shadow: none !important;
+    border-radius: 10px;
+}
+
+.btn-secondary i {
+    color: #d7e9f8 !important;
 }
 
 .btn-secondary:hover {
-    background: #3498db;
-    color: white;
+    background: rgba(20, 48, 92, 0.7) !important;
+    color: #eef7ff !important;
+    border-color: rgba(186, 214, 236, 0.75) !important;
     transform: translateY(-2px);
+}
+
+.btn-secondary:hover i {
+    color: #eef7ff !important;
 }
 
 .profile-image {
@@ -1320,23 +1332,24 @@ body.project-focused {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background: #f0f0f0;
-    border: 2px solid #ddd;
+    background: rgba(15, 23, 42, 0.55);
+    border: 1.5px solid rgba(186, 214, 236, 0.5);
     border-radius: 25px;
     text-decoration: none;
-    color: #666;
+    color: #d7e9f8;
     font-size: 1.5rem;
     transition: all 0.3s ease;
     z-index: 3;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 
 .icon-link:hover {
-    background: linear-gradient(135deg, #3498db, #2980b9);
-    color: white;
-    border-color: #3498db;
-    box-shadow: 0 4px 20px rgba(52, 152, 219, 0.4);
+    background: rgba(15, 23, 42, 0.72);
+    color: #eef7ff;
+    border-color: rgba(186, 214, 236, 0.7);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.25), 0 0 12px rgba(147, 197, 253, 0.15);
 }
 
 .icon-link i {
@@ -1344,6 +1357,11 @@ body.project-focused {
     z-index: 5;
     margin-right: 0;
     transition: all 0.3s ease;
+    color: #d7e9f8;
+}
+
+.icon-link:hover i {
+    color: #eef7ff;
 }
 
 .url-text {
@@ -1351,16 +1369,17 @@ body.project-focused {
     top: 50%;
     transform: translateY(-50%);
     background: transparent;
-    color: white;
+    color: #e2eef8 !important;
     padding: 0 0.75rem;
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 0.95rem;
+    font-weight: 600;
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
     z-index: 4;
     pointer-events: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35) !important;
 }
 
 .expandable-icon:nth-child(1) .url-text {
@@ -1610,4 +1629,16 @@ body.project-focused {
     .contact-container {
         grid-template-columns: 1fr;
     }
+}
+
+#home .action-buttons .btn.btn-secondary,
+#home .action-buttons .btn.btn-secondary i {
+    color: #d7e9f8 !important;
+    text-shadow: none !important;
+}
+
+#home .action-buttons .btn.btn-secondary {
+    background: rgba(11, 26, 54, 0.55) !important;
+    border: 1.5px solid rgba(186, 214, 236, 0.55) !important;
+    font-weight: 600 !important;
 }
