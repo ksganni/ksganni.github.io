@@ -348,19 +348,19 @@ p, .text, li, strong {
     text-shadow: 0 0 8px rgba(133, 193, 233, 0.6);
 }
 
-/* Navigation Bar - Transparent Glass Effect */
+/* Navigation Bar - frosted glass (transparent bar on every section) */
 .navbar {
     position: fixed !important;
     top: 0 !important;
     width: 100% !important;
-    background: transparent !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    border-bottom: none !important;
+    background: rgba(10, 20, 40, 0.35) !important;
+    backdrop-filter: blur(14px) saturate(1.2) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(1.2) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
     z-index: 1000 !important;
     padding: 1rem 0 !important;
-    transition: all 0.3s ease !important;
-    box-shadow: none !important;
+    transition: background 0.3s ease !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
 }
 
 .nav-container {
@@ -371,6 +371,7 @@ p, .text, li, strong {
     justify-content: space-between;
     align-items: center;
     padding: 0 2.5rem;
+    background: transparent !important;
 }
 
 .nav-logo {
@@ -408,9 +409,11 @@ p, .text, li, strong {
     text-shadow: 0 0 8px rgba(133, 193, 233, 0.6) !important;
 }
 
-/* Main Content */
+/* Main Content — no top gap so home blue shows through the transparent nav */
 .main-content {
-    margin-top: 80px;
+    margin-top: 0;
+    position: relative;
+    z-index: 2;
 }
 
 .section {
@@ -419,8 +422,10 @@ p, .text, li, strong {
     scroll-margin-top: 80px;
 }
 
+/* Home starts under the nav so transparency matches every other section */
+#home.section,
 .section:first-child {
-    padding-top: 2rem;
+    padding-top: 5.5rem;
 }
 
 .section-container {
