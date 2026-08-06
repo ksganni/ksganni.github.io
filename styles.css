@@ -5,46 +5,73 @@
     box-sizing: border-box;
 }
 
+html {
+    background-color: #0a1428;
+    overscroll-behavior: none;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     color: #333;
-    background-color: #ffffff;
     position: relative;
     overflow-x: hidden;
+    min-height: 100vh;
+    /* Solid base prevents white flash; gradient lives on fixed ::before */
+    background-color: #0a1428;
 }
 
-/* Blue Gradient Background with Animated Shapes */
+/* Soft on-screen drift for circles and dots */
+@keyframes driftA {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(28px, -36px); }
+    50% { transform: translate(-18px, -58px); }
+    75% { transform: translate(22px, -24px); }
+}
+
+@keyframes driftB {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(-32px, 24px); }
+    50% { transform: translate(16px, 48px); }
+    75% { transform: translate(-20px, 18px); }
+}
+
+@keyframes driftC {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(40px, 20px); }
+    66% { transform: translate(-24px, 40px); }
+}
+
+@keyframes driftD {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(18px, -40px); }
+}
+
 @keyframes moveFromLeft {
-    0% { transform: translateX(-50px) translateY(20vh) rotate(0deg); }
-    50% { transform: translateX(50vw) translateY(40vh) rotate(180deg); }
-    100% { transform: translateX(calc(100vw + 50px)) translateY(60vh) rotate(360deg); }
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(40px, -50px); }
 }
 
 @keyframes moveFromRight {
-    0% { transform: translateX(calc(100vw + 50px)) translateY(30vh) rotate(0deg); }
-    50% { transform: translateX(50vw) translateY(70vh) rotate(180deg); }
-    100% { transform: translateX(-50px) translateY(10vh) rotate(360deg); }
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-40px, 40px); }
 }
 
 @keyframes moveFromTop {
-    0% { transform: translateX(40vw) translateY(-50px) rotate(0deg); }
-    50% { transform: translateX(60vw) translateY(50vh) rotate(180deg); }
-    100% { transform: translateX(20vw) translateY(calc(100vh + 50px)) rotate(360deg); }
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, 50px); }
 }
 
 @keyframes moveFromBottom {
-    0% { transform: translateX(70vw) translateY(calc(100vh + 50px)) rotate(0deg); }
-    50% { transform: translateX(30vw) translateY(30vh) rotate(180deg); }
-    100% { transform: translateX(80vw) translateY(-50px) rotate(360deg); }
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-30px, -50px); }
 }
 
 @keyframes floatDiagonal {
-    0% { transform: translateX(-30px) translateY(-30px) rotate(0deg); }
-    50% { transform: translateX(50vw) translateY(50vh) rotate(180deg); }
-    100% { transform: translateX(calc(100vw + 30px)) translateY(calc(100vh + 30px)) rotate(360deg); }
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(35px, -45px); }
 }
 
 @keyframes drawLine {
@@ -53,17 +80,7 @@ body {
     100% { width: 0; opacity: 0.8; }
 }
 
-/* Pure Dark Blue Gradient Background */
-body {
-    background: linear-gradient(135deg, 
-        #0a1428 0%, 
-        #1e3a8a 25%,
-        #3b82f6 50%,
-        #1e3a8a 75%,
-        #0a1428 100%);
-    min-height: 100vh;
-}
-
+/* Fixed blue gradient backdrop (avoids white flash from background-attachment: fixed) */
 body::before {
     content: '';
     position: fixed;
@@ -71,10 +88,18 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
+    background:
         radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.06) 0%, transparent 50%);
+        radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.06) 0%, transparent 50%),
+        linear-gradient(
+            135deg,
+            #0a1428 0%,
+            #1e3a8a 25%,
+            #3b82f6 50%,
+            #1e3a8a 75%,
+            #0a1428 100%
+        );
     z-index: -2;
     pointer-events: none;
 }
@@ -93,122 +118,99 @@ body::after {
     pointer-events: none;
 }
 
-/* Animated Geometric Shapes */
+/* Circles only */
 .animated-shapes {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: -1;
+    z-index: 5;
     overflow: hidden;
 }
 
 .shape {
     position: absolute;
-    opacity: 0.6;
+    opacity: 0.75;
+    will-change: transform;
 }
 
-/* Moving Pentagon Shapes with Glow */
-.pentagon {
-    width: 18px;
-    height: 18px;
-    background: rgba(255, 255, 255, 0.8);
-    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-    box-shadow: 
-        0 0 8px rgba(255, 255, 255, 0.6),
-        0 0 16px rgba(255, 255, 255, 0.4),
-        0 0 24px rgba(255, 255, 255, 0.2);
-    filter: blur(0.5px);
-}
-
-.pentagon:nth-child(1) {
-    animation: moveFromLeft 35s linear infinite;
-    animation-delay: 0s;
-}
-
-.pentagon:nth-child(2) {
-    animation: moveFromTop 32s linear infinite;
-    animation-delay: 5s;
-}
-
-.pentagon:nth-child(3) {
-    animation: moveFromRight 38s linear infinite;
-    animation-delay: 10s;
-}
-
-/* Lines removed as requested */
-
-/* Moving Circles with Glow */
 .circle {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     box-shadow: 
-        0 0 6px rgba(255, 255, 255, 0.6),
-        0 0 12px rgba(255, 255, 255, 0.4),
-        0 0 18px rgba(255, 255, 255, 0.2);
-    filter: blur(0.5px);
+        0 0 6px rgba(255, 255, 255, 0.7),
+        0 0 14px rgba(133, 193, 233, 0.5);
+}
+
+.circle:nth-child(1) {
+    top: 22%;
+    left: 14%;
+    animation: driftA 18s ease-in-out infinite;
+}
+
+.circle:nth-child(2) {
+    top: 48%;
+    left: 78%;
+    animation: driftB 21s ease-in-out infinite;
+    animation-delay: -4s;
+}
+
+.circle:nth-child(3) {
+    top: 72%;
+    left: 32%;
+    animation: driftC 19s ease-in-out infinite;
+    animation-delay: -8s;
 }
 
 .circle:nth-child(4) {
-    animation: moveFromBottom 30s linear infinite;
-    animation-delay: 3s;
+    top: 18%;
+    left: 62%;
+    animation: driftA 16s ease-in-out infinite;
+    animation-delay: -2s;
 }
 
-.circle:nth-child(5) {
-    animation: floatDiagonal 34s linear infinite;
-    animation-delay: 8s;
-}
-
-/* Floating particles for extra detail */
+/* Floating dots */
 .floating-particles {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: -1;
+    z-index: 5;
+    overflow: hidden;
 }
 
 .particle {
     position: absolute;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 50%;
-    width: 2px;
-    height: 2px;
+    width: 3px;
+    height: 3px;
     box-shadow: 
-        0 0 3px rgba(255, 255, 255, 0.8),
-        0 0 6px rgba(255, 255, 255, 0.4);
+        0 0 4px rgba(255, 255, 255, 0.9),
+        0 0 8px rgba(133, 193, 233, 0.5);
+    will-change: transform;
 }
 
-/* Small floating particles */
-.particle:nth-child(1) {
-    animation: moveFromLeft 28s linear infinite;
-    animation-delay: 2s;
-}
+.particle:nth-child(1)  { top: 12%; left: 22%; animation: driftD 12s ease-in-out infinite; }
+.particle:nth-child(2)  { top: 25%; left: 65%; animation: driftA 15s ease-in-out infinite; animation-delay: -2s; }
+.particle:nth-child(3)  { top: 38%; left: 8%;  animation: driftB 13s ease-in-out infinite; animation-delay: -5s; }
+.particle:nth-child(4)  { top: 52%; left: 48%; animation: driftC 16s ease-in-out infinite; animation-delay: -1s; width: 4px; height: 4px; }
+.particle:nth-child(5)  { top: 66%; left: 82%; animation: driftD 11s ease-in-out infinite; animation-delay: -6s; }
+.particle:nth-child(6)  { top: 78%; left: 15%; animation: driftA 14s ease-in-out infinite; animation-delay: -3s; width: 4px; height: 4px; }
+.particle:nth-child(7)  { top: 18%; left: 90%; animation: driftB 17s ease-in-out infinite; animation-delay: -8s; }
+.particle:nth-child(8)  { top: 88%; left: 42%; animation: driftC 12s ease-in-out infinite; animation-delay: -4s; }
+.particle:nth-child(9)  { top: 44%; left: 35%; animation: driftD 18s ease-in-out infinite; animation-delay: -9s; }
+.particle:nth-child(10) { top: 8%;  left: 48%; animation: driftA 13s ease-in-out infinite; animation-delay: -7s; width: 2px; height: 2px; }
+.particle:nth-child(11) { top: 72%; left: 68%; animation: driftB 15s ease-in-out infinite; animation-delay: -2s; }
+.particle:nth-child(12) { top: 32%; left: 55%; animation: driftC 19s ease-in-out infinite; animation-delay: -10s; width: 2px; height: 2px; }
 
-.particle:nth-child(2) {
-    animation: moveFromRight 31s linear infinite;
-    animation-delay: 7s;
-}
-
-.particle:nth-child(3) {
-    animation: moveFromTop 26s linear infinite;
-    animation-delay: 12s;
-}
-
-.particle:nth-child(4) {
-    animation: moveFromBottom 33s linear infinite;
-    animation-delay: 4s;
-}
-
-.particle:nth-child(5) {
-    animation: floatDiagonal 29s linear infinite;
-    animation-delay: 15s;
+body.project-focused .animated-shapes,
+body.project-focused .floating-particles {
+    z-index: 850;
 }
 
 @keyframes backgroundFloat {
@@ -432,6 +434,50 @@ p, .text, li, strong {
     margin-bottom: 3rem;
     color: #2c3e50;
 }
+
+/* Scroll reveal: header first, then content */
+.reveal-title,
+.reveal-content {
+    opacity: 0;
+    transform: translateY(45px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-section.is-visible .reveal-title {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-section.content-visible .reveal-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-section.content-visible .skills-list li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.skills-list li {
+    opacity: 0;
+    transform: translateX(-18px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.reveal-section.content-visible .skills-list li:nth-child(1) { transition-delay: 0.05s; }
+.reveal-section.content-visible .skills-list li:nth-child(2) { transition-delay: 0.1s; }
+.reveal-section.content-visible .skills-list li:nth-child(3) { transition-delay: 0.15s; }
+.reveal-section.content-visible .skills-list li:nth-child(4) { transition-delay: 0.2s; }
+.reveal-section.content-visible .skills-list li:nth-child(5) { transition-delay: 0.25s; }
+.reveal-section.content-visible .skills-list li:nth-child(6) { transition-delay: 0.3s; }
+.reveal-section.content-visible .skills-list li:nth-child(7) { transition-delay: 0.35s; }
+.reveal-section.content-visible .skills-list li:nth-child(8) { transition-delay: 0.4s; }
+.reveal-section.content-visible .skills-list li:nth-child(9) { transition-delay: 0.45s; }
+.reveal-section.content-visible .skills-list li:nth-child(10) { transition-delay: 0.5s; }
+.reveal-section.content-visible .skills-list li:nth-child(11) { transition-delay: 0.55s; }
+.reveal-section.content-visible .skills-list li:nth-child(12) { transition-delay: 0.6s; }
+.reveal-section.content-visible .skills-list li:nth-child(13) { transition-delay: 0.65s; }
+.reveal-section.content-visible .skills-list li:nth-child(14) { transition-delay: 0.7s; }
 
 /* Home Section */
 #home .section-container {

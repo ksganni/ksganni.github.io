@@ -102,7 +102,39 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { threshold: 0.15 });
     
     projectItems.forEach(item => revealObserver.observe(item));
-    
+
+    // Section scroll reveal: header first, then content
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+
+            const section = entry.target;
+            section.classList.add('is-visible');
+
+            // Content appears only after the header has started showing
+            setTimeout(() => {
+                section.classList.add('content-visible');
+
+                if (section.id === 'projects') {
+                    projectItems.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                            setTimeout(() => card.classList.add('floating'), 650);
+                        }, (index % 4) * 100);
+                    });
+                }
+            }, 450);
+
+            sectionObserver.unobserve(section);
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -10% 0px'
+    });
+
+    document.querySelectorAll('.reveal-section').forEach(section => {
+        sectionObserver.observe(section);
+    });
     // Add a back arrow button to every card (visible only when expanded)
     projectItems.forEach(item => {
         const backBtn = document.createElement('button');
