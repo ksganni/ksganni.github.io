@@ -945,28 +945,9 @@ body.project-focused {
     border: none;
 }
 
+/* Card thumbnail belongs on the card only, not in the opened project */
 .project-item.expanded .project-image {
-    aspect-ratio: auto;
-    height: auto;
-    max-height: none;
-    max-width: 1100px;
-    width: 100%;
-    margin: 0 auto 1.5rem;
-    border-radius: 12px;
-    background: transparent;
-    flex-shrink: 0;
-}
-
-.project-item.expanded .project-image img {
-    object-fit: contain;
-    width: 100%;
-    height: auto;
-    max-height: none;
-}
-
-/* Rescaling a multi-megabyte image on hover stalls the panel */
-.project-item.expanded:hover .project-image img {
-    transform: none;
+    display: none;
 }
 
 .project-item.expanded .project-header {
