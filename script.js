@@ -203,16 +203,9 @@ document.addEventListener('DOMContentLoaded', function() {
             projectsGrid.classList.add('focused');
             document.body.classList.add('project-focused');
             description.style.display = 'block';
+            description.style.opacity = '1';
+            description.style.transform = 'none';
             this.scrollTop = 0;
-
-            description.style.opacity = '0';
-            description.style.transform = 'translateY(-10px)';
-
-            setTimeout(() => {
-                description.style.transition = 'all 0.3s ease';
-                description.style.opacity = '1';
-                description.style.transform = 'translateY(0)';
-            }, 10);
         });
     });
 

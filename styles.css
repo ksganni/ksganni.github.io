@@ -801,7 +801,7 @@ p, .text, li, strong {
 
 .project-image {
     width: 100%;
-    height: 170px;
+    aspect-ratio: 3 / 2;
     border-radius: 8px;
     overflow: hidden;
     background: #f0f0f0;
@@ -809,12 +809,14 @@ p, .text, li, strong {
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
+    /* overflow:hidden lets a flex item collapse to zero height next to long content */
+    flex-shrink: 0;
 }
 
 .project-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
@@ -931,6 +933,10 @@ body.project-focused {
     background: linear-gradient(135deg, #0a1428 0%, #1e3a8a 40%, #1e3a8a 60%, #0a1428 100%);
     border: none;
     box-shadow: none;
+    /* Opening must be instant: transitions and a full-screen blur make it crawl */
+    transition: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
 .project-item.expanded:hover {
@@ -940,19 +946,27 @@ body.project-focused {
 }
 
 .project-item.expanded .project-image {
+    aspect-ratio: auto;
     height: auto;
-    max-height: 420px;
+    max-height: none;
     max-width: 1100px;
     width: 100%;
     margin: 0 auto 1.5rem;
     border-radius: 12px;
     background: transparent;
+    flex-shrink: 0;
 }
 
 .project-item.expanded .project-image img {
     object-fit: contain;
+    width: 100%;
     height: auto;
-    max-height: 420px;
+    max-height: none;
+}
+
+/* Rescaling a multi-megabyte image on hover stalls the panel */
+.project-item.expanded:hover .project-image img {
+    transform: none;
 }
 
 .project-item.expanded .project-header {
