@@ -3,9 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const roles = [
         'Data Analyst!',
         'Data Scientist!',
-        'ML Engineer!',
-        'Data Engineer!',
-        'AI Engineer!'
+        'AI/ML Engineer!',
+        'Data Engineer!'
     ];
     const typedElement = document.getElementById('typed-role');
     if (typedElement) {

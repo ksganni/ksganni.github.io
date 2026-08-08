@@ -906,6 +906,11 @@ body.project-focused {
     display: inline-flex;
 }
 
+/* The reveal transform on the grid would trap the fixed panel inside it */
+.projects-grid.focused {
+    transform: none !important;
+}
+
 /* Focused view: fixed panel so scrolling stays inside the project */
 .project-item.expanded {
     position: fixed;
