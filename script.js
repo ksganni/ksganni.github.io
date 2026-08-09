@@ -171,7 +171,9 @@ document.addEventListener('DOMContentLoaded', function() {
         projectItems.forEach(otherItem => {
             otherItem.style.display = '';
         });
-        
+
+        projectsGrid.style.minHeight = '';
+
         projectsGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     
@@ -188,6 +190,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             const description = this.querySelector('.project-description');
+
+            // Hold the grid's height: without it the section collapses and the
+            // page scrolls up, flashing Experience before the panel covers it
+            projectsGrid.style.minHeight = projectsGrid.offsetHeight + 'px';
 
             // Hide all other project cards
             projectItems.forEach(otherItem => {
