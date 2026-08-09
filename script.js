@@ -311,7 +311,7 @@ function openResume() {
 
     const frame = document.getElementById('resume-frame');
     if (frame && !frame.getAttribute('src')) {
-        frame.setAttribute('src', RESUME_PATH + '#view=FitH');
+        frame.setAttribute('src', RESUME_PATH + '#toolbar=0&navpanes=0&view=FitH');
     }
 
     modal.classList.add('open');
