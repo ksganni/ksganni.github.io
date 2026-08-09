@@ -300,34 +300,59 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Global functions for onclick handlers
+const RESUME_PATH = 'assets/documents/Krishna_Sathvika_Ganni_Resume.pdf';
+
+function openResume() {
+    const modal = document.getElementById('resume-modal');
+    if (!modal) {
+        window.open(RESUME_PATH, '_blank', 'noopener');
+        return;
+    }
+
+    const frame = document.getElementById('resume-frame');
+    if (frame && !frame.getAttribute('src')) {
+        frame.setAttribute('src', RESUME_PATH + '#view=FitH');
+    }
+
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('resume-open');
+}
+
+function closeResume() {
+    const modal = document.getElementById('resume-modal');
+    if (!modal) return;
+
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('resume-open');
+}
+
+document.addEventListener('click', function(e) {
+    if (e.target.closest('[data-close-resume]')) {
+        closeResume();
+    }
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeResume();
+    }
+});
+
 function downloadResume() {
-    console.log('downloadResume function called');
     try {
-        // Create a temporary link element for download
         const link = document.createElement('a');
-        link.href = 'assets/documents/Krishna_Sathvika_Ganni_Resume.pdf'; // Path to your resume
+        link.href = RESUME_PATH;
         link.download = 'Krishna_Sathvika_Ganni_Resume.pdf';
         link.style.display = 'none';
-        
+
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-        
-        // Show feedback
-        const button = event.target.closest('button');
-        if (button) {
-            const originalText = button.innerHTML;
-            button.innerHTML = '<i class="fas fa-check"></i> Downloaded!';
-            button.style.background = '#27ae60';
-            
-            setTimeout(() => {
-                button.innerHTML = originalText;
-                button.style.background = '';
-            }, 2000);
-        }
     } catch (error) {
         console.error('Error in downloadResume:', error);
-        alert('Resume download failed. Please check if the file exists.');
+        window.open(RESUME_PATH, '_blank', 'noopener');
     }
 }
 

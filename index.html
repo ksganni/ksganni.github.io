@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Krishna Sathvika Ganni - Portfolio</title>
-    <link rel="stylesheet" href="styles.css?v=32">
+    <link rel="stylesheet" href="styles.css?v=34">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -75,8 +75,8 @@
                             <p class="tagline">Turning data into direction. ✨</p>
                         </div>
                         <div class="action-buttons">
-                            <button class="btn btn-secondary" onclick="downloadResume()">
-                                <i class="fas fa-download"></i> Resume
+                            <button class="btn btn-secondary" onclick="openResume()">
+                                <i class="fas fa-file-alt"></i> Resume
                             </button>
                             <button class="btn btn-secondary" onclick="openMail()">
                                 <i class="fas fa-envelope"></i> krishnasathvika.ganni05@gmail.com
@@ -494,6 +494,33 @@
         </section>
     </main>
 
-    <script src="script.js?v=33"></script>
+    <!-- Resume viewer -->
+    <div class="resume-modal" id="resume-modal" role="dialog" aria-modal="true" aria-label="Resume" aria-hidden="true">
+        <div class="resume-modal-backdrop" data-close-resume></div>
+        <div class="resume-modal-panel">
+            <div class="resume-modal-header">
+                <h3 class="resume-modal-title">Resume</h3>
+                <div class="resume-modal-actions">
+                    <button type="button" class="resume-modal-btn" onclick="downloadResume()">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                    <button type="button" class="resume-modal-btn" data-close-resume aria-label="Close resume">
+                        <i class="fas fa-times"></i> Close
+                    </button>
+                </div>
+            </div>
+            <div class="resume-modal-body">
+                <iframe id="resume-frame" title="Krishna Sathvika Ganni resume"></iframe>
+                <div class="resume-fallback">
+                    <p>Your browser can't display the PDF inline.</p>
+                    <a href="assets/documents/Krishna_Sathvika_Ganni_Resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-modal-btn">
+                        <i class="fas fa-external-link-alt"></i> Open Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=34"></script>
 </body>
 </html>
