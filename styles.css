@@ -1689,15 +1689,24 @@ body.resume-open {
 .resume-modal-backdrop {
     position: absolute;
     inset: 0;
-    background: #0a1428;
+    background: rgba(4, 10, 22, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .resume-modal-panel {
     position: absolute;
-    inset: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(1250px, 88vw);
+    height: 94vh;
     display: flex;
     flex-direction: column;
     background: linear-gradient(135deg, #0a1428 0%, #12295a 55%, #0a1428 100%);
+    border: 1px solid rgba(186, 214, 236, 0.35);
+    border-radius: 16px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
     overflow: hidden;
 }
 
@@ -1778,6 +1787,11 @@ body.resume-open {
 }
 
 @media (max-width: 768px) {
+    .resume-modal-panel {
+        width: 94vw;
+        height: 92vh;
+    }
+
     .resume-modal-header {
         padding: 0.75rem 1rem;
     }
