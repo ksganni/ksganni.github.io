@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Global functions for onclick handlers
-const RESUME_PATH = 'assets/documents/Krishna_Sathvika_Ganni_Resume.pdf?v=3';
+const RESUME_PATH = 'assets/documents/Krishna_Sathvika_Ganni_Resume.pdf?v=4';
 
 function openResume() {
     const modal = document.getElementById('resume-modal');
